@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Alert;
 use Auth;
 use Str;
+use Image;
 use Illuminate\Support\Facades\Redirect;
 use DB;
 use Carbon;
@@ -174,18 +175,35 @@ class DevController extends Controller
 
     public function insert_post(Request $request)
     {
+        $array = $request->get('arrayName');
+
+        foreach ($array as $value) {
+            $itemcodes[] = [
+                'category' => $value['category'],
+                'price' => $value['price'],
+            ];
+        }
+
+        //dump($itemcodes);
         $post = new Post();
         $post->title = $request->get('title');
+
+        $event_poster = $request->file('event_poster');
+        $filename3 = $event_poster->getClientOriginalName();
+        $filename3 = preg_replace("/[^a-zA-Z0-9_.]/", "", $filename3);
+        Image::make($event_poster->getRealPath())->resize(600, 430)->save('uploads/posters/' . $filename3);
+        $post->event_poster = $filename3;
+
         $post->category = $request->get('category');
         $post->description = $request->get('description');
-        $post->charges = $request->get('charges');
+        $post->charges = $itemcodes;
         $post->location = $request->get('location');
         $post->dates = $request->get('dates');
         $post->feature_status = $request->get('feature_status');
         $post->created_by = Auth::user()->email;
         $post->status = $request->get('status');
         $post->save();
-        // Alert::error('Post Added Successfully', 'Error')->autoclose(2500);
+        //Alert::error('Post Added Successfully', 'Error')->autoclose(2500);
         return back();
     }
 

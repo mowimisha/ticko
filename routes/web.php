@@ -13,6 +13,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 
 //FRONTEND
 Route::get('/', 'FrontEndController@index');
+Route::get('/event-details/{id}', 'FrontEndController@get_event_details');
 Route::get('buyer-register', 'FrontEndController@buyer');
 Route::post('buyer-register', 'FrontEndController@register_buyer');
 Route::get('seller-register', 'FrontEndController@seller');

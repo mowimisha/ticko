@@ -13,8 +13,16 @@ class FrontEndController extends Controller
 {
     public function index()
     {
-        return view('welcome')
+        return view('frontend.events')
             ->with('posts', Post::orderBy('created_at', 'desc')->get());
+    }
+
+    public function get_event_details($id)
+    {
+        $post = Post::where('id', $id)->first();
+        return view('frontend.event')
+            ->with('posts', $post)
+            ->with('events', Post::orderBy('created_at', 'desc')->get());
     }
 
     public function buyer()

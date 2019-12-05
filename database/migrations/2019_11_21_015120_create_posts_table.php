@@ -16,10 +16,12 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('event_poster');
             $table->text('description');
-            $table->float('charges', '8', 2);
+            $table->json('charges');
             $table->string('location');
             $table->string('category');
+            $table->string('type'); //vip or regular
             $table->string('dates');
             $table->string('status'); //active or inactive
             $table->string('created_by');
