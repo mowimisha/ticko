@@ -21,7 +21,6 @@ class CreatePostsTable extends Migration
             $table->json('charges');
             $table->string('location');
             $table->string('category');
-            $table->string('type'); //vip or regular
             $table->string('dates');
             $table->string('status'); //active or inactive
             $table->string('created_by');

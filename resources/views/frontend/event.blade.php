@@ -66,19 +66,19 @@
 							<a class="uk-text-demi-bold hvr-back" href="{{ url('/') }}"><span class="uk-margin-small-right"
 								data-uk-icon="icon: arrow-left; ratio: 1.4"></span>Back</a>
 							<h2 class="uk-heading-small uk-letter-spacing-medium">{{ $posts->title}}</address>
-							<p data-uk-lightbox><a class="uk-text-demi-bold hvr-forward"
+							{{-- <p data-uk-lightbox><a class="uk-text-demi-bold hvr-forward"
 								href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4740.819266853735!2d9.99008871708242!3d53.550454675412404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9d24afe84a0263!2sRathaus!5e0!3m2!1sde!2sde!4v1499675200938"
 								data-caption="Conference location" data-type="iframe">
-								<span class="uk-margin-small-right" data-uk-icon="icon: location; ratio: 1.2"></span>View Map</a></p>
+								<span class="uk-margin-small-right" data-uk-icon="icon: location; ratio: 1.2"></span>View Map</a></p> --}}
 						</div>
 					</div>
 					<div class="uk-width-1-3@m uk-flex uk-flex-middle uk-flex-right">
 						<div class="uk-card uk-card-default uk-card-body uk-width-1-1 uk-border-rounded-large">
 							<h3 class="uk-card-title">Date and Time</h3>
 							{{-- <time class="uk-text-muted" datetime="2020-07-07 08:00">Saturday, July 7 2020 at 8:00 AM</time> --}}
-							<time class="uk-text-muted" datetime="2020-07-07 08:00">{{ $posts->dates }}</time><br><br>
-							<a href="#" class="uk-button uk-button-primary-preserve uk-button-large uk-width-1-1">Book Now ksh.{{ $posts->charges }}</a>
-							<p class="uk-text-center"><a class="uk-link-muted" href="#contact" data-uk-scroll>Have a question, contact us</a></p>
+                            <time class="uk-text-muted" datetime="2020-07-07 08:00">{{ $posts->dates }}</time><br><br>
+                            <a href="#book-tickets" class="uk-button uk-button-primary-preserve uk-button-large uk-width-1-1">Book Now</a>
+
 						</div>
 					</div>
 				</div>
@@ -91,69 +91,17 @@
 <div class="uk-section">
   <div class="uk-container">
     <div class="uk-grid-large" data-uk-grid>
-      <div class="uk-width-expand@m">
-        <div class="uk-article">
-          {{-- <h3>Event description</h3>
-          <p>{{ $posts->description }}</p> --}}
-            <table class="uk-table uk-table-reponsive uk-table-striped uk-table-bordered table-hover table-checkable" >
-                <thead class="uk-table th">
-                    <th>Type</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Sub Total</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>VIP</td>
-                        <td>{{ $posts->charges }}</td>
-                        <td>
-                            <select name="" id="">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                                <option value="">7</option>
-                                <option value="">8</option>
-                                <option value="">9</option>
-                                <option value="">10</option>
-                            </select>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Regular</td>
-                        <td>{{ $posts->charges }}</td>
-                        <td>
-                            <select name="" id="">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                                <option value="">7</option>
-                                <option value="">8</option>
-                                <option value="">9</option>
-                                <option value="">10</option>
-                            </select>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>TOTAL</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="uk-width-expand@m">
+            <div class="uk-article">
+                <img src="/uploads/posters/large/{{ $posts->event_poster }}" alt="" width="600" height="600">
+            </div>
         </div>
-      </div>
-      {{-- <div class="uk-width-1-3@m">
+
+        <div class="uk-width-1-3@m">
+        <h4>Description</h4>
+        <p>{{ $posts->description }}</p>
+
+
         <h3>Event Location</h3>
         <img class="uk-border-rounded" src="https://placehold.co/600x430" alt="Location">
         <address>{{ $posts->location }}</address>
@@ -161,9 +109,8 @@
           href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4740.819266853735!2d9.99008871708242!3d53.550454675412404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9d24afe84a0263!2sRathaus!5e0!3m2!1sde!2sde!4v1499675200938"
           data-caption="Conference location" data-type="iframe">
           <span class="uk-margin-small-right" data-uk-icon="icon: location; ratio: 1.2"></span>View Map</a></p>
-        <h4>Parking Instructions</h4>
-        <p>Activity that and the scarfs, for bit of text, never just
-         ran middle at behind seal that their accustomed.</p>
+
+
 
         <h3>Share Event</h3>
 				<div class="uk-margin">
@@ -179,7 +126,68 @@
 						</div>
 					</div>
 				</div>
-      </div> --}}
+      </div>
+    </div>
+
+    <div class="uk-grid-large" id="book-tickets" data-uk-grid>
+        <div class="uk-width-expand@m">
+            <div class="uk-article">
+                <h3>Choose your tickets</h3>
+                <table class="uk-table uk-table-striped" >
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase">Type</th>
+                            <th class="text-uppercase">Price</th>
+                            <th class="text-uppercase">Quantity</th>
+                            <th class="text-uppercase">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($posts->charges as $charge)
+                            <tr>
+                                <th id="category" scope="row">
+                                    {{ $charge['category'] }}
+                                </th>
+                                <td>
+                                    <input id="price" value="{{ $charge['price'] }}" disabled style="border:none; background: transparent;">
+                                </td>
+                                <td>
+                                    <select id="quantity" name="quantity" class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input id="subtotal" value="" disabled style="border:none; background: transparent; font-size:14px; font-weight:600;">
+                                </td>
+                            </tr>
+                        @endforeach
+
+
+
+                        <tr class="total-row">
+                            <th></th>
+                            <td></td>
+                            <td>
+                                Total
+                            </td>
+                            <td>
+                                <input id="totalprice" value="" disabled style="border:none; background: transparent; font-size:14px; font-weight:600;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
   </div>
 </div>
@@ -193,10 +201,11 @@
                 <div>
                     <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-border-rounded-large uk-overflow-hidden">
                         <div class="uk-card-media-top uk-inline uk-light">
-                        <img src="https://placehold.co/640x380" alt="Course Title">
+                        <img src="/uploads/posters/thumbnail/{{ $post->event_poster }}" alt="">
+
                         <div class="uk-position-cover uk-overlay-xlight"></div>
                         <div class="uk-position-small uk-position-top-left">
-                            <span class="uk-label uk-text-bold uk-text-price">Ksh.{{ $post->charges }}</span>
+                            {{-- <span class="uk-label uk-text-bold uk-text-price">Ksh.{{ $post->charges }}</span> --}}
                         </div>
                         <div class="uk-position-small uk-position-top-right">
                             <a href="#" class="uk-icon-button uk-like uk-position-z-index uk-position-relative" data-uk-icon="heart"></a>
@@ -328,6 +337,28 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+
+
+    var price = document.getElementById("price");
+    var category = document.getElementById("category");
+    var quantity = document.getElementById("quantity");
+    var subtotal = document.getElementById("subtotal");
+
+
+    quantity.addEventListener("change", function() {
+        console.log(price.value);
+        calcsubtotal = (price.value * quantity.value);
+
+        subtotal.value = calcsubtotal;
+        totalprice.value = calcsubtotal;
+   });
+
+</script>
+
 
 </body>
 

@@ -189,10 +189,11 @@ class DevController extends Controller
         $post->title = $request->get('title');
 
         $event_poster = $request->file('event_poster');
-        $filename3 = $event_poster->getClientOriginalName();
-        $filename3 = preg_replace("/[^a-zA-Z0-9_.]/", "", $filename3);
-        Image::make($event_poster->getRealPath())->resize(600, 430)->save('uploads/posters/' . $filename3);
-        $post->event_poster = $filename3;
+        // $filename3 = $event_poster->getClientOriginalName();
+        // $filename3 = preg_replace("/[^a-zA-Z0-9_.]/", "", $filename3);
+        Image::make($event_poster->getRealPath())->save('uploads/posters/large/' . $post->title);
+        Image::make($event_poster->getRealPath())->resize(640, 420)->save('uploads/posters/thumbnail/' . $post->title);
+        $post->event_poster = $post->title;
 
         $post->category = $request->get('category');
         $post->description = $request->get('description');

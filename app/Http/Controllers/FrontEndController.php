@@ -22,7 +22,7 @@ class FrontEndController extends Controller
         $post = Post::where('id', $id)->first();
         return view('frontend.event')
             ->with('posts', $post)
-            ->with('events', Post::orderBy('created_at', 'desc')->get());
+            ->with('events', Post::where('id', $id)->orderBy('created_at', 'desc')->get());
     }
 
     public function buyer()

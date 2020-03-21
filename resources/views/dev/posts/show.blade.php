@@ -166,7 +166,11 @@
 
                                     <td>{{ $post->location }}</td>
 
-                                    <td>{{ $post->charges }}</td>
+                                    <td>
+                                    @foreach ($post->charges as $charge)
+                                        <strong>{{ $charge['category'] }}</strong> - {{ $charge['price'] }}<br>
+                                    @endforeach
+                                    </td>
 
                                     @if($post->status == 'active')
                                         <td data-field="Status" class="m-datatable__cell"><span style="width: 110px;"><span class="m-badge m-badge--success m-badge--wide">{{ $post->status }}</span></span></td>
@@ -187,6 +191,10 @@
                                         <a href="{{ url('edit-post-dev/'.$post->id) }}" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit ">
                                             <i class="fa fa-edit"></i>
                                         </a>
+
+                                        <a href="{{ url('delete-post-dev/'.$post->id) }}" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit ">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
 
                                     </button>
                                     </td>
