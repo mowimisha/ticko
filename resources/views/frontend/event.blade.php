@@ -46,7 +46,7 @@
 	            </div>
 	          </div>
 	          <div class="uk-navbar-item">
-	            <div><a class="uk-button uk-button-primary-light" href="sign-up.html">Sign Up</a></div>
+	            <div><a class="uk-button uk-button-primary-light" href="{{ url('/login') }}">Login</a></div>
 	          </div>
 	          <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span
 	            data-uk-navbar-toggle-icon></span></a>
@@ -77,7 +77,7 @@
 							<h3 class="uk-card-title">Date and Time</h3>
 							{{-- <time class="uk-text-muted" datetime="2020-07-07 08:00">Saturday, July 7 2020 at 8:00 AM</time> --}}
                             <time class="uk-text-muted" datetime="2020-07-07 08:00">{{ $posts->dates }}</time><br><br>
-                            <a href="#book-tickets" class="uk-button uk-button-primary-preserve uk-button-large uk-width-1-1">Book Now</a>
+                        <a href="{{ url('/buyer-register') }}" class="uk-button uk-button-primary-preserve uk-button-large uk-width-1-1">Book Now</a>
 
 						</div>
 					</div>

@@ -1,5 +1,6 @@
 <?php
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::redirect('home', 'admin-dash', 301);
+
 
 Route::get('login',  'Auth\LoginController@showLoginForm');
 Route::post('login', 'Auth\LoginController@login');

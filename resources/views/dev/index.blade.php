@@ -8,14 +8,9 @@
 
 <!-- begin:: Content -->
 <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-    <script src="../js/sweetalert2.all.js"></script>
-
         <!-- Include this after the sweet alert js file -->
-        @if (Session::has('sweet_alert.alert'))
-            <script>
-                swal({!! Session::get('sweet_alert.alert') !!});
-            </script>
-        @endif
+        @include('sweet::alert')
+
 
 
     <div class="kt-portlet kt-portlet--mobile">

@@ -46,7 +46,7 @@
 	            </div>
 	          </div>
 	          <div class="uk-navbar-item">
-	            <div><a class="uk-button uk-button-primary-light" href="sign-up.html">Sign Up</a></div>
+	            <div><a class="uk-button uk-button-primary-light" href="{{ url('/login') }}">Login</a></div>
 	          </div>
 	          <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span
 	            data-uk-navbar-toggle-icon></span></a>

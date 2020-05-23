@@ -42,7 +42,7 @@ class DevController extends Controller
                     ->with('tickets', Ticket::orderBy('created_at', 'desc')->get());
                 break;
             default:
-                Alert::error('User Does Not exist!', 'Error')->autoclose(2500);
+                alert()->error('User Does Not exist!', 'Error')->autoclose(2500);
                 return back();
                 break;
         }
@@ -90,10 +90,10 @@ class DevController extends Controller
                 $user->role = 'seller';
                 $user->password = bcrypt(str::random(10));
                 $user->save();
-                // Alert::success('User Registered Successfully!', 'Success')->autoclose(3000);
+                alert()->success('User Registered Successfully!', 'Success')->autoclose(3000);
                 return back();
             } else {
-                // Alert::error('Add user fail!, Duplicate email or Invalid credentials', 'Error')->autoclose(3000);
+                alert()->error('Add user fail!, Duplicate email or Invalid credentials', 'Error')->autoclose(3000);
                 return back();
             }
         }
@@ -142,13 +142,13 @@ class DevController extends Controller
                 $password = $request->get('password');
                 $confirm_password = $request->get('password_confirmation');
                 if ($password != $confirm_password) {
-                    Alert::error('Passwords Dont Match! Check passwords and try again', 'Error')->autoclose(2500);
+                    alert()->error('Passwords Dont Match! Check passwords and try again', 'Error')->autoclose(2500);
                     return back();
                 } else {
                     $user->password = bcrypt($request->get('password'));
                 }
                 $user->save();
-                // Alert::success('Update Successful!', 'Success')->autoclose(2500);
+                alert()->success('Update Successful!', 'Success')->autoclose(2500);
                 return back();
             }
         }
@@ -158,7 +158,7 @@ class DevController extends Controller
     {
         $user = User::where('id', $id)->first();
         $user->delete();
-        // Alert::success('User Deleted Successfully', 'Success')->autoclose(2000);
+        alert()->success('User Deleted Successfully', 'Success')->autoclose(2000);
         return back();
     }
 
@@ -204,8 +204,8 @@ class DevController extends Controller
         $post->created_by = Auth::user()->email;
         $post->status = $request->get('status');
         $post->save();
-        //Alert::error('Post Added Successfully', 'Error')->autoclose(2500);
-        return back();
+        alert()->success('Post Added Successfully', 'Success')->autoclose(2500);
+        return redirect('all-posts-dev');
     }
 
     public function edit_post($id)
@@ -242,7 +242,7 @@ class DevController extends Controller
                 $post->feature_status = $request->get('feature_status');
                 $post->status = $request->get('status');
                 $post->save();
-                // Alert::success('Update Successful!', 'Success')->autoclose(2500);
+                alert()->success('Update Successful!', 'Success')->autoclose(2500);
                 return back();
             }
         }
@@ -252,7 +252,7 @@ class DevController extends Controller
     {
         $post = Post::where('id', $id)->first();
         $post->delete();
-        // Alert::success('post Deleted Successfully', 'Success')->autoclose(2000);
+        alert()->success('post Deleted Successfully', 'Success')->autoclose(2000);
         return back();
     }
 
@@ -318,8 +318,8 @@ class DevController extends Controller
         $ticket->ticket_info = $itemcodes;
         $ticket->created_by = Auth::user()->email;
         $ticket->save();
-        // Alert::success('tickets Added Successfully', 'Success')->autoclose(2000);
-        return back();
+        alert()->success('tickets Added Successfully', 'Success')->autoclose(2000);
+        return redirect('all-tickets-dev');
     }
 
     public function validate_ticket()
@@ -343,17 +343,17 @@ class DevController extends Controller
                     $v->validated_on = Carbon\Carbon::parse()->format('Y-m-d h:i:s');
                     $jencode = json_encode($jdecode);
                     DB::update("update tickets set ticket_info = '$jencode' where batch_no = ?", [$va->batch_no]);
-                    // Alert::success('Received Successfully!', 'Success')->autoclose(2500);
+                    alert()->success('Received Successfully!', 'Success')->autoclose(2500);
                     return back();
                 } elseif ($crypt == $icode && $status == "") {
-                    // Alert::error(' Ticket Not Booked', 'Error')->autoclose(2500);
+                    alert()->error(' Ticket Not Booked', 'Error')->autoclose(2500);
                     return back();
                 } elseif ($crypt == $icode && $status == "deactivated") {
-                    // Alert::error(' Ticket Deactivated', 'Error')->autoclose(2500);
+                    alert()->error(' Ticket Deactivated', 'Error')->autoclose(2500);
                     return back();
                 }
             }
-            // Alert::error('Invalid Item', 'Error')->autoclose(2500);
+            alert()->error('Invalid Item', 'Error')->autoclose(2500);
             return back();
         }
     }
@@ -391,7 +391,7 @@ class DevController extends Controller
     {
         $ticket = Ticket::find($id);
         $ticket->delete();
-        // Alert::success('Success', 'Tickets Deleted Successfully')->autoclose(2500);
+        alert()->success('Success', 'Tickets Deleted Successfully')->autoclose(2500);
         return back();
     }
 }

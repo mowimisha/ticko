@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Post;
 use App\User;
+use Alert;
 use DB;
 use Carbon;
 
@@ -58,13 +59,13 @@ class FrontEndController extends Controller
                     $update_array = $ticket_updated->toArray();
                     $jencode = json_encode($update_array, true);
                     DB::update("update tickets set ticket_info = '$jencode' where batch_no = ?", [$va->batch_no]);
-                    // Alert::success('Received Successfully!', 'Success')->autoclose(2500);
-                    return back();
+                    alert()->success('Ticket booked successfully, Login to Get more details about your ticket', 'Success')->autoclose(3000);
+                    return redirect('/login');
                 }
             }
         }
-        // Alert::success('Registration Successful!', 'Success')->autoclose(2500);
-        //return back();
+        alert()->success('Ticket booked successfully, Login to Get more details about your ticket', 'Success')->autoclose(3000);
+        return redirect('/login');
     }
 
     public function seller()
@@ -81,7 +82,7 @@ class FrontEndController extends Controller
             'password' => Hash::make($request['password']),
             'role' => 'seller'
         ]);
-        // Alert::success('Registration Successful!', 'Success')->autoclose(2500);
+        alert()->success('Registration Successful', 'Success')->autoclose(2500);
         return back();
     }
 }

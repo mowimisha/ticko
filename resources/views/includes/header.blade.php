@@ -13,13 +13,10 @@ Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-t
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
 <html lang="en">
-
 	<!-- begin::Head -->
 	<head>
-
 		<!--begin::Base Path (base relative path for assets of this page) -->
 		<base href="../">
-
 		<!--end::Base Path -->
 		<meta charset="utf-8" />
 		<title>@yield('title')</title>
@@ -48,7 +45,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin:: Global Mandatory Vendors -->
         <link href="../assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
-                <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 
 		<!--end:: Global Mandatory Vendors -->
 
@@ -92,16 +89,16 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="../assets/css/demo1/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/demo1/skins/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
-
 		<!--end::Layout Skins -->
         <link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
-
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	</head>
 
 	<!-- end::Head -->
 
 	<!-- begin::Body -->
 	<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+        @include('sweet::alert')
 
 		<!-- begin:: Page -->
 
@@ -118,14 +115,11 @@ License: You must have a valid license purchased only from themeforest(the above
 				<button class="kt-header-mobile__topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
 			</div>
 		</div>
-
 		<!-- end:: Header Mobile -->
 
 				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-
 					<!-- begin:: Header -->
 					<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
-
 						<!-- begin:: Header Menu -->
 						<button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
 						<div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
@@ -133,18 +127,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <a href="#" class="btn kt-subheader__btn-secondary"><strong><span class="kt-badge kt-badge--dark kt-badge--inline kt-badge--pill kt-badge--rounded mt-3">  {{ date(  'D M j, Y '  ) }}  </span></strong></a>
 							</div>
 						</div>
-
 						<!-- end:: Header Menu -->
 
 						<!-- begin:: Header Topbar -->
 						<div class="kt-header__topbar">
 
 							<!--begin: Search -->
-
 							<!--begin: Search -->
-
 							<!--end: Search -->
-
 							<!--begin: Notifications -->
 							<div class="kt-header__topbar-item dropdown">
 								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
@@ -240,14 +230,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </a>
 										</div>
 									</div>
-
 									<!--end: Navigation -->
 								</div>
 							</div>
-
 							<!--end: User Bar -->
 						</div>
-
 						<!-- end:: Header Topbar -->
 					</div>
 

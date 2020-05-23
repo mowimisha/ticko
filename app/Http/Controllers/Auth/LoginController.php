@@ -60,17 +60,17 @@ class LoginController extends Controller
         ], $messages);
 
         if (empty($request->email) && empty($request->password)) {
-            // Alert::error('Empty Fields! Provide username and password to Login', 'Error')->autoclose(2500);
+            alert()->error('Empty Fields! Provide username and password to Login', 'Error')->autoclose(2500);
             return back();
         } elseif ($validator->fails()) {
-            // Alert::error('Wrong credentials! check username and password and try again', 'Error')->autoclose(2500);
+            alert()->error('Wrong credentials! check username and password and try again', 'Error')->autoclose(2500);
             return redirect('/login');
         } else {
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-                // Alert::success('Login Successful!', 'Success')->autoclose(2500);
+                alert()->success('Login Successful!', 'Success')->autoclose(2500);
                 return redirect('/admin-dash');
             } elseif (!Auth::attempt()) {
-                // Alert::error('Wrong credentials! check username and password and try again', 'Error')->autoclose(2500);
+                alert()->error('Wrong credentials! check username and password and try again', 'Error')->autoclose(2500);
                 return redirect('/login');
             }
         }

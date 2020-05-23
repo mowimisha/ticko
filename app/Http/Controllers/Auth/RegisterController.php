@@ -88,7 +88,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request['password']),
             'role' => 'buyer'
         ]);
-
+        alert() - success('Tickets Booked successfully')->autoclose(2500);
         return back();
     }
     public function SellerRegister(Request $request)
@@ -100,6 +100,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request['password']),
             'role' => 'seller'
         ]);
+        alert() - success('Tickets sold successfully')->autoclose(2500);
         return back();
     }
 }
