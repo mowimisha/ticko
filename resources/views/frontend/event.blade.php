@@ -23,19 +23,19 @@
 	        </div>
 	        <div class="uk-navbar-right">
 	          <ul class="uk-navbar-nav uk-visible@m" data-uk-scrollspy-nav="closest: li; scroll: true; offset: 80">
-                    <li ><a href="index.html">Shop</a></li>
+                    <li ><a href="#">Shop</a></li>
                   <li >
                     <a href="#">Categories</a>
                     <div class="uk-navbar-dropdown">
                       <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li ><a href="event.html">Music Concerts</a></li>
-                        <li ><a href="search.html">Movies</a></li>
-                        <li ><a href="sign-in.html">Breakfast Meeting</a></li>
-                        <li ><a href="sign-up.html">Gala</a></li>
+                        <li ><a href="#">Music Concerts</a></li>
+                        <li ><a href="#">Movies</a></li>
+                        <li ><a href="#">Breakfast Meeting</a></li>
+                        <li ><a href="#">Gala</a></li>
                       </ul>
                     </div>
                   </li>
-	            <li ><a href="index.html">Terms & Conditions</a></li>
+	            <li ><a href="#">Terms & Conditions</a></li>
 	          </ul>
 	          <div>
 	            <a class="uk-navbar-toggle" data-uk-search-icon href="#"></a>
@@ -280,20 +280,20 @@
 					<a href="#" class="uk-logo">Sprin</a>
 				</div>
 				<div class="uk-margin uk-text-small">
-					<p>Made by a <a href="https://drifter.works/" target="_blank">Drifter</a> in Guatemala City.</p>
+					<p>Made by a <a href="#" target="_blank">Drifter</a> in Guatemala City.</p>
 				</div>
 				<div class="uk-margin">
 					<div data-uk-grid class="uk-child-width-auto uk-grid-small">
 						<div class="uk-first-column">
-							<a href="https://www.facebook.com/" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon"
+							<a href="#" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon"
 								target="_blank"></a>
 						</div>
 						<div>
-							<a href="https://www.instagram.com/" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon"
+							<a href="#" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon"
 								target="_blank"></a>
 						</div>
 						<div>
-							<a href="mailto:info@blacompany.com" data-uk-icon="icon: mail" class="uk-icon-link uk-icon"
+							<a href="#" data-uk-icon="icon: mail" class="uk-icon-link uk-icon"
 								target="_blank"></a>
 						</div>
 					</div>
@@ -305,33 +305,33 @@
 
 <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
   <div class="uk-offcanvas-bar">
-    <a class="uk-logo" href="index.html">Sprin</a>
+    <a class="uk-logo" href="#">Sprin</a>
     <button class="uk-offcanvas-close" type="button" data-uk-close="ratio: 1.2"></button>
     <ul class="uk-nav uk-nav-primary uk-nav-offcanvas uk-margin-medium-top uk-text-center">
-      <li ><a href="index.html">Courses</a></li>
-      <li ><a href="events.html">Events</a></li>
-      <li ><a href="course.html">Course</a></li>
-      <li class="uk-active"><a href="event.html">Event</a></li>
-      <li ><a href="search.html">Search</a></li>
-      <li ><a href="sign-in.html">Sign In</a></li>
-      <li ><a href="sign-up.html">Sign Up</a></li>
+      <li ><a href="#">Courses</a></li>
+      <li ><a href="#">Events</a></li>
+      <li ><a href="#">Course</a></li>
+      <li class="uk-active"><a href="#">Event</a></li>
+      <li ><a href="#">Search</a></li>
+      <li ><a href="#">Sign In</a></li>
+      <li ><a href="#">Sign Up</a></li>
     </ul>
     <div class="uk-margin-medium-top">
-      <a class="uk-button uk-width-1-1 uk-button-primary-light" href="sign-up.html">Sign Up</a>
+      <a class="uk-button uk-width-1-1 uk-button-primary-light" href="#">Sign Up</a>
     </div>
     <div class="uk-margin-medium-top uk-text-center">
       <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center">
         <div>
-          <a href="https://twitter.com/" data-uk-icon="icon: twitter" class="uk-icon-link" target="_blank"></a>
+          <a href="#" data-uk-icon="icon: twitter" class="uk-icon-link" target="_blank"></a>
         </div>
         <div>
-          <a href="https://www.facebook.com/" data-uk-icon="icon: facebook" class="uk-icon-link" target="_blank"></a>
+          <a href="#" data-uk-icon="icon: facebook" class="uk-icon-link" target="_blank"></a>
         </div>
         <div>
-          <a href="https://www.instagram.com/" data-uk-icon="icon: instagram" class="uk-icon-link" target="_blank"></a>
+          <a href="#" data-uk-icon="icon: instagram" class="uk-icon-link" target="_blank"></a>
         </div>
         <div>
-          <a href="https://vimeo.com/" data-uk-icon="icon: vimeo" class="uk-icon-link" target="_blank"></a>
+          <a href="#" data-uk-icon="icon: vimeo" class="uk-icon-link" target="_blank"></a>
         </div>
       </div>
     </div>

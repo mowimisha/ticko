@@ -8,14 +8,6 @@
 
 <!-- begin:: Content -->
 <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-    <script src="../js/sweetalert2.all.js"></script>
-
-        <!-- Include this after the sweet alert js file -->
-        @if (Session::has('sweet_alert.alert'))
-            <script>
-                swal({!! Session::get('sweet_alert.alert') !!});
-            </script>
-        @endif
 
     @foreach ($tickets as $ticket)
     <div class="kt-portlet kt-portlet--mobile">
@@ -23,7 +15,7 @@
 
             <div class="kt-portlet__head-toolbar kt-portlet__head-lg">
                 <div class="kt-portlet__head-wrapper">
-                    <div class="kt-portlet__body-actions" style="margin-left:  200px;"">
+                    <div class="kt-portlet__body-actions" style="margin-left:  200px;">
                         @if (Auth::user()->hasRole('dev'))
                             <div class="row">
                                 <div class="col-12">
